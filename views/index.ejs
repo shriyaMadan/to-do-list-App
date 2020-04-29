@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Todo list</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -15,6 +16,10 @@
   <body>
     <div class="container">
       <!--clear and dark mode buttons-->
+    <div class="control clear-btn pull-left" style="color: aquamarine;">
+      Every day chatting board<br>
+      v1.0
+    </div>
     <div class="control clear-btn pull-right">
       <button class="btn  btn-info"><span class="fa fa-trash"></span></button>
     </div>
@@ -22,8 +27,7 @@
       <button type="button" class="btn btn-info"> <i class="fas fa-lightbulb"></i> <span>Dark</span> Mode</button>
     </div>
     <!--List Heading and input form-->
-    <div class="main-heading text-center">MY LIST</div>
-    <form class="form add-form">
+    <form class="form add-form" style="clear:both;margin-top: 60px;">
       <div class="input-icon">
         <input type="text" class="input-box" placeholder="I have to.." required/>
       </div>
@@ -32,11 +36,13 @@
     <!-- incomplete tasks list -->
     <div class="add-items"></div>
     <ul class="list">
-      <li>Add Tasks<span class="delete-btn glyphicon glyphicon-trash"></span><span class="check-btn glyphicon glyphicon-ok"></span></li>
+      <% for (const idx in items) { %>
+
+        <li><%= items[idx] %><span class="delete-btn glyphicon glyphicon-trash"></span><span class="check-btn glyphicon glyphicon-ok"></span></li>
+      <% } %>
     </ul>
 <!-- Complete tasks list -->
     <ul class="completed-tasks-list">
-      <li>Completed Tasks<span class="delete-btn glyphicon glyphicon-trash"></span><span class="check-btn glyphicon glyphicon-ok"></span></li>
     </ul>
   </div>
 

@@ -5,6 +5,19 @@ let flag = 0
 deleteBtn = ' <span class="delete-btn glyphicon glyphicon-trash"></span>'
 checkBtn = '<span class="check-btn glyphicon glyphicon-ok"></span>'
 
+function listenDelete() {
+  $('.delete-btn').click(function(){
+    var p = $(this).parent()
+    console.log("p", p);
+    fetch(`/delete/?item=${p[0].innerText}`)
+    p.fadeOut(function(){
+      p.remove()
+    })
+  })
+}
+
+listenDelete()
+
 $(".add-form").submit(function(e){
   e.preventDefault()
   if(flag === 1){
@@ -13,15 +26,12 @@ $(".add-form").submit(function(e){
   }
   if($(".input-box").val() != "" && flag===0){
   e.preventDefault()
-  $('.list').append('<li>'+ input.val()+ deleteBtn +checkBtn+'</li>')
+  const newValue = input.val();
+  $('.list').append('<li>'+ newValue + deleteBtn +checkBtn+'</li>')
+  fetch(`/add/?item=${newValue}`)
   input.val('')
 
-  $('.delete-btn').click(function(){
-    var p = $(this).parent()
-    p.fadeOut(function(){
-      p.remove()
-    })
-  })
+  listenDelete();
   $('.check-btn').click(function(){
     var p = $(this).parent()
     p.fadeOut(1000 ,function(){
