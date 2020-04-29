@@ -1,0 +1,120 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Armata',sans-serif;
+}
+body{/* , #12889F #ED7411 #F8E671*/
+  background-image: linear-gradient(120deg,#26a69a,#e0f7fa);
+  min-height: 100vh;
+}
+.container{
+  max-width: 800px;
+  margin: auto;
+  padding: 10px;
+}
+
+.input-box{
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 18px;
+  padding: 13px 3px 0 0;
+}
+.input-icon{
+  border-bottom: 2px solid #000;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.add-btn{
+  width: auto;
+  text-align: right;
+  border-bottom: 2px solid #000;
+  border-radius: 0;
+}
+
+.main-heading{
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+.list li{
+  list-style: none;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 18px;
+  margin: 6px 0;
+  overflow: hidden;
+}
+.completed-tasks-list li{
+  list-style: none;
+  width: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 18px;
+  margin: 6px 0;
+  overflow: hidden;
+}
+.check-btn{
+  border: none;
+  float: right;
+  margin-left: 20px;
+  cursor: pointer;
+  background: none;
+}
+.delete-btn{
+  border: none;
+  cursor: pointer;
+  background: none;
+  outline:none;
+  float: right;
+  margin-left: 10px;
+}
+.add-items{
+  font-size: 18px;
+  color: white;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+body.dark{
+  color: white;
+  background-image: none;
+  background-color: black;
+}
+body.dark .completed-tasks-list li{
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+body.dark .list li{
+  background-color:  rgb(131, 165, 241);
+}
+body.dark .input-icon{
+  color:white;
+  border-bottom: 2px solid white;
+}
+body.dark .add-btn{
+  color: silver;
+}
+
+.dark-mode-theme {
+  float: right;
+}
+.control {
+  margin-left: 10px;
+}
+.add-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-icon {
+  width: 100%;
+  padding: 8px 0px 0 0;
+}
