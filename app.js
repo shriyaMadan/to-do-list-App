@@ -41,7 +41,11 @@ app.get('/delete', (req, res) => {
 })
 
 app.get('/showme', (req, res) => {
-  res.send(data)
+  res.send(data.map((datum) => {
+
+    return `<div>${JSON.stringify(datum)}</div>`
+
+  }).join(''))
 })
 
 const port = process.env.PORT || 3000
