@@ -7,6 +7,8 @@ checkBtn = '<span class="check-btn glyphicon glyphicon-ok"></span>'
 
 function listenDelete() {
   $('.delete-btn').click(function(){
+    alert('This feature is not available in free version. Paytm kro.')
+    return;
     var p = $(this).parent()
     console.log("p", p);
     fetch(`/delete/?item=${p[0].innerText}`)
